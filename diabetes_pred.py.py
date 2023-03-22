@@ -86,7 +86,7 @@ if (selected == 'Diabetes Prediction'):
     
     # Email Notification 
     import smtplib
-    import ssl-certinfo
+    import ssl
     port = 587  # For starttls
     smtp_server = "smtp.gmail.com"
     sender_email = "elias.alam20@gmail.com"
