@@ -83,29 +83,6 @@ if (selected == 'Diabetes Prediction'):
         
     st.success(diab_diagnosis)
     
-#Email notification   
-import smtplib
-import ssl
-
-port = 587  # For starttls
-smtp_server = "smtp.gmail.com"
-sender_email = "elias.alam20@gmail.com"
-sender_password = "eabr30102000"
-receiver_email = Email
-
-message = """\
-Subject: Hi there
-
-I'm sending an email through Python code.
-"""
-
-context = ssl.create_default_context()
-
-with smtplib.SMTP(smtp_server, port) as server:
-    server.starttls(context=context)
-    server.ehlo()
-    server.login(sender_email, sender_password)
-    server.sendmail(sender_email, receiver_email, message)
 
 
     
