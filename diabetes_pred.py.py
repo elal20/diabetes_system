@@ -83,6 +83,37 @@ if (selected == 'Diabetes Prediction'):
         
     st.success(diab_diagnosis)
     
+    import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+
+# SMTP server configuration
+smtp_server = "smtp.gmail.com"
+smtp_port = 587
+smtp_username = "your_email@gmail.com"  # replace with your email address
+smtp_password = "your_password"  # replace with your email password
+
+# create a message object
+msg = MIMEMultipart()
+msg['From'] = smtp_username
+msg['To'] = Email
+msg['Subject'] = "Diabetes Test Result"
+
+# create a message body
+if diab_prediction[0] == 1:
+    body = "Dear " + Fname + ",\n\nBased on your inputs, our model has diagnosed that you are diabetic. Please consult your doctor and follow the recommended treatment plan.\n\nBest regards,\nDisease Prediction System"
+else:
+    body = "Dear " + Fname + ",\n\nBased on your inputs, our model has diagnosed that you are not diabetic. Please continue to maintain a healthy lifestyle to prevent the risk of developing diabetes.\n\nBest regards,\nDisease Prediction System"
+
+msg.attach(MIMEText(body, 'plain'))
+
+# send the email
+with smtplib.SMTP(smtp_server, smtp_port) as server:
+    server.starttls()
+    server.login(smtp_username, smtp_password)
+    server.sendmail(smtp_username, Email, msg.as_string())
+
+    
 
 
     
