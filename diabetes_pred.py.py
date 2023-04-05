@@ -83,15 +83,15 @@ if (selected == 'Diabetes Prediction'):
         
     st.success(diab_diagnosis)
     
-    import smtplib
+import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 # SMTP server configuration
 smtp_server = "smtp.gmail.com"
 smtp_port = 587
-smtp_username = "your_email@gmail.com"  # replace with your email address
-smtp_password = "your_password"  # replace with your email password
+smtp_username = "diabetes.prediction.streamlit@gmail.com"  
+smtp_password = "easyprediction123"  
 
 # create a message object
 msg = MIMEMultipart()
@@ -112,6 +112,7 @@ with smtplib.SMTP(smtp_server, smtp_port) as server:
     server.starttls()
     server.login(smtp_username, smtp_password)
     server.sendmail(smtp_username, Email, msg.as_string())
+
 
     
 
