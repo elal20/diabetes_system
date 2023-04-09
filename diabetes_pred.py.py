@@ -9,13 +9,13 @@ import pickle
 import streamlit as st
 from streamlit_option_menu import option_menu
 
-# Set the page config to use a background image
+# Set the background image of the app
 st.set_page_config(
     page_title="Diabetes Prediction System",
-    page_icon=":bar_chart:",
+    page_icon=":clipboard:",
     layout="wide",
-    page_bg_img="Background.jpg",
-)
+    initial_sidebar_state="auto",
+    background_image="Background.jpg"
 
 
 # loading the saved models
