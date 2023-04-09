@@ -14,7 +14,7 @@ st.set_page_config(
     page_title="Diabetes Prediction System",
     page_icon=":bar_chart:",
     layout="wide",
-    page_bg_img="path/to/your/image.jpg",
+    page_bg_img="Background.jpg",
 )
 
 
