@@ -9,19 +9,6 @@ import pickle
 import streamlit as st
 from streamlit_option_menu import option_menu
 
-# Set the page style with CSS
-st.markdown(
-    f"""
-    <style>
-        .reportview-container {{
-            background: url('Background.jpg');
-            background-size: cover;
-        }}
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
 # loading the saved models
 
 diabetes_model = pickle.load(open('trained_model.sav', 'rb'))
