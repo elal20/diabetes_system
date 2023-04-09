@@ -9,15 +9,6 @@ import pickle
 import streamlit as st
 from streamlit_option_menu import option_menu
 
-# Set the background image of the app
-st.set_page_config(
-    page_title="Diabetes Prediction System",
-    page_icon=":clipboard:",
-    layout="wide",
-    initial_sidebar_state="auto",
-    background_image="Background.jpg"
-
-
 # loading the saved models
 
 diabetes_model = pickle.load(open('trained_model.sav', 'rb'))
